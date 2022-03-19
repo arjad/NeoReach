@@ -1,0 +1,86 @@
+function isScrolledIntoView(elem)
+{
+    var docViewTop = $(window).scrollTop();
+    var docViewBottom = docViewTop + $(window).height();
+
+    var elemTop = $(elem).offset().top;
+    var elemBottom = elemTop + $(elem).height();
+
+    return (((elemBottom <= docViewBottom) && (elemTop >= docViewTop))||(elemTop<=docViewBottom));
+}
+function animationImageFull(){
+    var list = $("body").find(".image-animate");
+    $(list).each(function(index, element) {
+        if (isScrolledIntoView(element)){
+            $(element).addClass("animation-scrooll");
+        }
+    });
+
+}
+function animationTextFull(){
+    var list = $("body").find(".zoon-animate");
+    $(list).each(function(index, element) {
+        if (isScrolledIntoView(element)){
+            $(element).addClass("scrooll-visible-text");
+        }
+    });
+
+}
+ function call_animation(){
+    $('.top-circle-hand').addClass('element-mark');
+    $('.ok-icon').addClass('element-mark');
+    setTimeout(function() { 
+       $('.top-circle-hand').removeClass('element-mark');
+       $('.ok-icon').removeClass('element-mark');
+
+       /*$('.question-icon').addClass('anime-active');
+       $('.dashed-stroke-mark').addClass('anime-active');
+       setTimeout(function() {
+          $('.question-icon').removeClass('anime-active');
+          $('.dashed-stroke-mark').removeClass('anime-active');
+       }, 8000);*/
+    }, 8000);
+}
+
+function call_animation_mark(){
+    $('.question-icon').addClass('anime-active');
+    $('.dashed-stroke-mark').addClass('anime-active');
+    setTimeout(function() { 
+       $('.question-icon').removeClass('anime-active');
+       $('.dashed-stroke-mark').removeClass('anime-active');
+       return;
+    }, 8000);
+}
+
+$(document).ready(function() {
+    animationImageFull();
+    animationTextFull();
+    $(window).scroll(function(){
+       animationImageFull();
+       animationTextFull();
+    });
+    $('.form-called').click(function(e){
+      e.preventDefault();
+      $('.special-modal-element').toggle();
+      var name_influencer = $(this).attr('rel');
+      $('input[name ="desired_influencer"]').val(name_influencer); 
+    });
+    $('.close-form').click(function(e){
+      e.preventDefault();
+      $('.special-modal-element').toggle();
+    });
+    
+    
+
+   // setInterval(call_animation, 16000);
+   /* setInterval(call_animation_mark, 16000);
+     setTimeout(function() { 
+       $('.question-icon').removeClass('anime-active');
+       $('.dashed-stroke-mark').removeClass('anime-active');
+     }, 8000);*/
+    /* setTimeout(function() { 
+           $('.top-circle-hand').removeClass('element-mark');
+           $('.ok-icon').removeClass('element-mark');
+     }, 8000 );*/
+    
+});

@@ -1,0 +1,58 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?bqhsjua');
+  src:  url('fonts/icomoon.eot?bqhsjua#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.woff2?bqhsjua') format('woff2'),
+    url('fonts/icomoon.ttf?bqhsjua') format('truetype'),
+    url('fonts/icomoon.woff?bqhsjua') format('woff'),
+    url('fonts/icomoon.svg?bqhsjua#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-tiktok:before {
+  content: "\e901";
+}
+.icon-blog:before {
+  content: "\e902";
+}
+.icon-close-x:before {
+  content: "\e900";
+}
+.icon-facebook-square:before {
+  content: "\f082";
+}
+.icon-twitter:before {
+  content: "\f099";
+}
+.icon-facebook:before {
+  content: "\f19a";
+}
+.icon-linkedin:before {
+  content: "\f0e1";
+}
+.icon-youtube:before {
+  content: "\f16a";
+}
+.icon-instagram:before {
+  content: "\f16d";
+}
+.icon-twitch:before {
+  content: "\f1e8";
+}
